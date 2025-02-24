@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Run an experiment using ssh to real hosts, not in dockers
+
+# We need these environment variables set:
+
+# PRAC_SSH_P0_USERHOST: the user@host to ssh to for P0
+# PRAC_SSH_P0_SSHOPTS: any options to ssh you need to ssh to P0
+# PRAC_SSH_P0_IP: the IP address P0 can listen for connections on (P0
+#     listens on ports 2115 and 2116)
+# PRAC_SSH_P0_DIR: the directory relative to the homedir where the prac
+#     repo is checked out and built
+
+# PRAC_SSH_P1_USERHOST: the user@host to ssh to for P1
+# PRAC_SSH_P1_SSHOPTS: any options to ssh you need to ssh to P1
+# PRAC_SSH_P1_IP: the IP address P1 can listen for connections on (P1
+#     listens on port 2117)
+# PRAC_SSH_P1_DIR: the directory relative to the homedir where the prac
+#     repo is checked out and built
+
+# PRAC_SSH_P2_USERHOST: the user@host to ssh to for P2
+# PRAC_SSH_P2_SSHOPTS: any options to ssh you need to ssh to P2
+# PRAC_SSH_P2_DIR: the directory relative to the homedir where the prac
+#     repo is checked out and built
+
+# Get the IP addresses
+p0addr=$PRAC_SSH_P0_IP
+p1addr=$PRAC_SSH_P1_IP
+
+# Gather options and arguments
+preproc=0
+opts=""
+while getopts paot:ex arg; do
+    opts+=" -${arg} ${OPTARG}"
+    if [ "$arg" = "p" -o "$arg" = "a" ]; then
+        preproc=1
+    fi
+done
+shift $((OPTIND-1))
+
+# Get the number of cores usable by each party
+ncores_p0=1
+ncores_p1=1
+ncores_p2=1
+if [ "$whichexps" != "none" ]; then
+    ncores_p0=`ssh -n $PRAC_SSH_P0_SSHOPTS $PRAC_SSH_P0_USERHOST $PRAC_NUMA_P0 nproc 2>/dev/null`
+    ncores_p1=`ssh -n $PRAC_SSH_P1_SSHOPTS $PRAC_SSH_P1_USERHOST $PRAC_NUMA_P1 nproc 2>/dev/null`
+    ncores_p2=`ssh -n $PRAC_SSH_P2_SSHOPTS $PRAC_SSH_P2_USERHOST $PRAC_NUMA_P2 nproc 2>/dev/null`
+fi
+
+targ_p0="-t ${ncores_p0}"
+targ_p1="-t ${ncores_p1}"
+targ_p2="-t ${ncores_p2}"
+
+echo ===== Running prac $opts -- $*
+date "+===== Start %s %F %T"
+
+# Run, saving the output
+savefile0=$$.p0.out
+savefile1=$$.p1.out
+savefile2=$$.p2.out
+ssh -n $PRAC_SSH_P0_SSHOPTS $PRAC_SSH_P0_USERHOST "cd $PRAC_SSH_P0_DIR && $PRAC_NUMA_P0 stdbuf -o 0 ./prac $opts $targ_p0 0 $* > $savefile0 2>&1" &
+ssh -n $PRAC_SSH_P1_SSHOPTS $PRAC_SSH_P1_USERHOST "cd $PRAC_SSH_P1_DIR && $PRAC_NUMA_P1 stdbuf -o 0 ./prac $opts $targ_p1 1 $p0addr $* > $savefile1 2>&1" &
+ssh -n $PRAC_SSH_P2_SSHOPTS $PRAC_SSH_P2_USERHOST "cd $PRAC_SSH_P2_DIR && $PRAC_NUMA_P2 stdbuf -o 0 ./prac $opts $targ_p2 2 $p0addr $p1addr $* > $savefile2 2>&1" &
+wait
+echo ===== P0 output
+ssh -n $PRAC_SSH_P0_SSHOPTS $PRAC_SSH_P0_USERHOST "cd $PRAC_SSH_P0_DIR && cat $savefile0 && rm -f $savefile0"
+echo ===== P1 output
+ssh -n $PRAC_SSH_P1_SSHOPTS $PRAC_SSH_P1_USERHOST "cd $PRAC_SSH_P1_DIR && cat $savefile1 && rm -f $savefile1"
+echo ===== P2 output
+ssh -n $PRAC_SSH_P2_SSHOPTS $PRAC_SSH_P2_USERHOST "cd $PRAC_SSH_P2_DIR && cat $savefile2 && rm -f $savefile2"
+date "+===== End %s %F %T"

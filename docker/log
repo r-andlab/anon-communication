@@ -1,0 +1,751 @@
+===== Running prac -p -- a:2 r10:240 c:100
+===== Start 1736248377 2025-01-07 16:42:57
+===== P0 output
+22 messages sent
+303840 message bytes sent
+22 Lamport clock (latencies)
+1473120 local AES operations
+173 milliseconds wall clock time
+{180000000;100000000;60000000} nanoseconds {real;user;system}
+Mem: 57308 KiB
+Precomputed values used: T0 a:2 r10:240 c:100
+===== P1 output
+22 messages sent
+303840 message bytes sent
+22 Lamport clock (latencies)
+1473120 local AES operations
+172 milliseconds wall clock time
+{180000000;110000000;60000000} nanoseconds {real;user;system}
+Mem: 56708 KiB
+Precomputed values used: T0 a:2 r10:240 c:100
+===== P2 output
+Connection to p0 refused, will retry.
+4 messages sent
+738054 message bytes sent
+23 Lamport clock (latencies)
+22800 local AES operations
+170 milliseconds wall clock time
+{180000000;60000000;80000000} nanoseconds {real;user;system}
+Mem: 50636 KiB
+Precomputed values used: T0 r10:240
+===== End 1736248379 2025-01-07 16:42:59
+===== Running prac -o -- remise -m 10 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248379 2025-01-07 16:42:59
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+541 messages sent
+26108 message bytes sent
+520 Lamport clock (latencies)
+125040 local AES operations
+744 milliseconds wall clock time
+{740000000;80000000;320000000} nanoseconds {real;user;system}
+Mem: 7472 KiB
+1600 messages sent
+77780 message bytes sent
+1541 Lamport clock (latencies)
+375120 local AES operations
+1645 milliseconds wall clock time
+{1640000000;90000000;1000000000} nanoseconds {real;user;system}
+Mem: 7556 KiB
+Precomputed values used: T0 a:1 r10:80 c:50
+===== P1 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+541 messages sent
+26108 message bytes sent
+520 Lamport clock (latencies)
+125040 local AES operations
+743 milliseconds wall clock time
+{740000000;60000000;330000000} nanoseconds {real;user;system}
+Mem: 7568 KiB
+1600 messages sent
+77780 message bytes sent
+1541 Lamport clock (latencies)
+375120 local AES operations
+1645 milliseconds wall clock time
+{1640000000;120000000;970000000} nanoseconds {real;user;system}
+Mem: 7660 KiB
+Precomputed values used: T0 a:1 r10:80 c:50
+===== P2 output
+Connection to p1 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+65088 message bytes sent
+520 Lamport clock (latencies)
+181652 local AES operations
+743 milliseconds wall clock time
+{740000000;80000000;320000000} nanoseconds {real;user;system}
+Mem: 7616 KiB
+320 messages sent
+214480 message bytes sent
+1538 Lamport clock (latencies)
+501884 local AES operations
+1644 milliseconds wall clock time
+{1640000000;120000000;860000000} nanoseconds {real;user;system}
+Mem: 7692 KiB
+Precomputed values used: T0 r10:80
+===== End 1736248383 2025-01-07 16:43:03
+===== Running prac -p -- a:2 r12:240 c:100
+===== Start 1736248383 2025-01-07 16:43:03
+===== P0 output
+26 messages sent
+361440 message bytes sent
+26 Lamport clock (latencies)
+5896800 local AES operations
+254 milliseconds wall clock time
+{250000000;140000000;100000000} nanoseconds {real;user;system}
+Mem: 120924 KiB
+Precomputed values used: T0 a:2 r12:240 c:100
+===== P1 output
+26 messages sent
+361440 message bytes sent
+26 Lamport clock (latencies)
+5896800 local AES operations
+255 milliseconds wall clock time
+{250000000;160000000;80000000} nanoseconds {real;user;system}
+Mem: 121304 KiB
+Precomputed values used: T0 a:2 r12:240 c:100
+===== P2 output
+Connection to p1 refused, will retry.
+4 messages sent
+848454 message bytes sent
+27 Lamport clock (latencies)
+22800 local AES operations
+249 milliseconds wall clock time
+{250000000;80000000;80000000} nanoseconds {real;user;system}
+Mem: 54500 KiB
+Precomputed values used: T0 r12:240
+===== End 1736248384 2025-01-07 16:43:04
+===== Running prac -o -- remise -m 12 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248385 2025-01-07 16:43:05
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+621 messages sent
+30908 message bytes sent
+600 Lamport clock (latencies)
+493680 local AES operations
+727 milliseconds wall clock time
+{730000000;70000000;360000000} nanoseconds {real;user;system}
+Mem: 8164 KiB
+1840 messages sent
+92180 message bytes sent
+1781 Lamport clock (latencies)
+1481040 local AES operations
+1719 milliseconds wall clock time
+{1720000000;120000000;970000000} nanoseconds {real;user;system}
+Mem: 8260 KiB
+Precomputed values used: T0 a:1 r12:80 c:50
+===== P1 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+621 messages sent
+30908 message bytes sent
+600 Lamport clock (latencies)
+493680 local AES operations
+727 milliseconds wall clock time
+{730000000;80000000;350000000} nanoseconds {real;user;system}
+Mem: 8076 KiB
+1840 messages sent
+92180 message bytes sent
+1781 Lamport clock (latencies)
+1481040 local AES operations
+1720 milliseconds wall clock time
+{1720000000;70000000;1020000000} nanoseconds {real;user;system}
+Mem: 8384 KiB
+Precomputed values used: T0 a:1 r12:80 c:50
+===== P2 output
+Connection to p0 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+74288 message bytes sent
+600 Lamport clock (latencies)
+568184 local AES operations
+727 milliseconds wall clock time
+{730000000;50000000;340000000} nanoseconds {real;user;system}
+Mem: 7796 KiB
+320 messages sent
+242080 message bytes sent
+1778 Lamport clock (latencies)
+1522276 local AES operations
+1719 milliseconds wall clock time
+{1720000000;100000000;880000000} nanoseconds {real;user;system}
+Mem: 7892 KiB
+Precomputed values used: T0 r12:80
+===== End 1736248388 2025-01-07 16:43:08
+===== Running prac -p -- a:2 r14:240 c:100
+===== Start 1736248389 2025-01-07 16:43:09
+===== P0 output
+30 messages sent
+419040 message bytes sent
+30 Lamport clock (latencies)
+23591520 local AES operations
+497 milliseconds wall clock time
+{500000000;310000000;180000000} nanoseconds {real;user;system}
+Mem: 386364 KiB
+Precomputed values used: T0 a:2 r14:240 c:100
+===== P1 output
+30 messages sent
+419040 message bytes sent
+30 Lamport clock (latencies)
+23591520 local AES operations
+497 milliseconds wall clock time
+{500000000;300000000;190000000} nanoseconds {real;user;system}
+Mem: 387732 KiB
+Precomputed values used: T0 a:2 r14:240 c:100
+===== P2 output
+4 messages sent
+958854 message bytes sent
+31 Lamport clock (latencies)
+22800 local AES operations
+487 milliseconds wall clock time
+{490000000;110000000;60000000} nanoseconds {real;user;system}
+Mem: 58508 KiB
+Precomputed values used: T0 r14:240
+===== End 1736248389 2025-01-07 16:43:09
+===== Running prac -o -- remise -m 14 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248390 2025-01-07 16:43:10
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+701 messages sent
+35708 message bytes sent
+680 Lamport clock (latencies)
+1968240 local AES operations
+492 milliseconds wall clock time
+{490000000;100000000;370000000} nanoseconds {real;user;system}
+Mem: 10552 KiB
+2080 messages sent
+106580 message bytes sent
+2021 Lamport clock (latencies)
+5904720 local AES operations
+1247 milliseconds wall clock time
+{1250000000;260000000;920000000} nanoseconds {real;user;system}
+Mem: 10640 KiB
+Precomputed values used: T0 a:1 r14:80 c:50
+===== P1 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+701 messages sent
+35708 message bytes sent
+680 Lamport clock (latencies)
+1968240 local AES operations
+492 milliseconds wall clock time
+{490000000;110000000;400000000} nanoseconds {real;user;system}
+Mem: 10544 KiB
+2080 messages sent
+106580 message bytes sent
+2021 Lamport clock (latencies)
+5904720 local AES operations
+1247 milliseconds wall clock time
+{1250000000;230000000;960000000} nanoseconds {real;user;system}
+Mem: 10760 KiB
+Precomputed values used: T0 a:1 r14:80 c:50
+===== P2 output
+Connection to p0 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+83488 message bytes sent
+680 Lamport clock (latencies)
+2056304 local AES operations
+492 milliseconds wall clock time
+{490000000;120000000;330000000} nanoseconds {real;user;system}
+Mem: 8120 KiB
+320 messages sent
+269680 message bytes sent
+2018 Lamport clock (latencies)
+5495648 local AES operations
+1247 milliseconds wall clock time
+{1250000000;290000000;750000000} nanoseconds {real;user;system}
+Mem: 8132 KiB
+Precomputed values used: T0 r14:80
+===== End 1736248393 2025-01-07 16:43:13
+===== Running prac -p -- a:2 r16:240 c:100
+===== Start 1736248393 2025-01-07 16:43:13
+===== P0 output
+34 messages sent
+476640 message bytes sent
+34 Lamport clock (latencies)
+94370400 local AES operations
+1392 milliseconds wall clock time
+{1390000000;730000000;650000000} nanoseconds {real;user;system}
+Mem: 1334796 KiB
+Precomputed values used: T0 a:2 r16:240 c:100
+===== P1 output
+34 messages sent
+476640 message bytes sent
+34 Lamport clock (latencies)
+94370400 local AES operations
+1394 milliseconds wall clock time
+{1390000000;750000000;630000000} nanoseconds {real;user;system}
+Mem: 1329908 KiB
+Precomputed values used: T0 a:2 r16:240 c:100
+===== P2 output
+Connection to p1 refused, will retry.
+4 messages sent
+1069254 message bytes sent
+35 Lamport clock (latencies)
+22800 local AES operations
+1384 milliseconds wall clock time
+{1380000000;130000000;60000000} nanoseconds {real;user;system}
+Mem: 62396 KiB
+Precomputed values used: T0 r16:240
+===== End 1736248396 2025-01-07 16:43:16
+===== Running prac -o -- remise -m 16 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248396 2025-01-07 16:43:16
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+781 messages sent
+40508 message bytes sent
+760 Lamport clock (latencies)
+7866480 local AES operations
+558 milliseconds wall clock time
+{560000000;100000000;460000000} nanoseconds {real;user;system}
+Mem: 18492 KiB
+2320 messages sent
+120980 message bytes sent
+2261 Lamport clock (latencies)
+23599440 local AES operations
+1672 milliseconds wall clock time
+{1670000000;360000000;1150000000} nanoseconds {real;user;system}
+Mem: 18716 KiB
+Precomputed values used: T0 a:1 r16:80 c:50
+===== P1 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+781 messages sent
+40508 message bytes sent
+760 Lamport clock (latencies)
+7866480 local AES operations
+558 milliseconds wall clock time
+{560000000;120000000;410000000} nanoseconds {real;user;system}
+Mem: 18324 KiB
+2320 messages sent
+120980 message bytes sent
+2261 Lamport clock (latencies)
+23599440 local AES operations
+1672 milliseconds wall clock time
+{1670000000;310000000;1190000000} nanoseconds {real;user;system}
+Mem: 18608 KiB
+Precomputed values used: T0 a:1 r16:80 c:50
+===== P2 output
+Connection to p1 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+92688 message bytes sent
+760 Lamport clock (latencies)
+7975280 local AES operations
+557 milliseconds wall clock time
+{560000000;140000000;380000000} nanoseconds {real;user;system}
+Mem: 10792 KiB
+320 messages sent
+297280 message bytes sent
+2258 Lamport clock (latencies)
+21270112 local AES operations
+1672 milliseconds wall clock time
+{1670000000;340000000;960000000} nanoseconds {real;user;system}
+Mem: 10868 KiB
+Precomputed values used: T0 r16:80
+===== End 1736248401 2025-01-07 16:43:21
+===== Running prac -p -- a:2 r18:240 c:100
+===== Start 1736248402 2025-01-07 16:43:22
+===== P0 output
+38 messages sent
+538560 message bytes sent
+38 Lamport clock (latencies)
+377485920 local AES operations
+4765 milliseconds wall clock time
+{4770000000;2690000000;2060000000} nanoseconds {real;user;system}
+Mem: 4709476 KiB
+Precomputed values used: T0 a:2 r18:240 c:100
+===== P1 output
+Connection to p0 refused, will retry.
+38 messages sent
+538560 message bytes sent
+38 Lamport clock (latencies)
+377485920 local AES operations
+4767 milliseconds wall clock time
+{4770000000;2530000000;2210000000} nanoseconds {real;user;system}
+Mem: 4707248 KiB
+Precomputed values used: T0 a:2 r18:240 c:100
+===== P2 output
+4 messages sent
+1179654 message bytes sent
+39 Lamport clock (latencies)
+22800 local AES operations
+4756 milliseconds wall clock time
+{4760000000;150000000;60000000} nanoseconds {real;user;system}
+Mem: 66224 KiB
+Precomputed values used: T0 r18:240
+===== End 1736248408 2025-01-07 16:43:28
+===== Running prac -o -- remise -m 18 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248408 2025-01-07 16:43:28
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+861 messages sent
+45728 message bytes sent
+840 Lamport clock (latencies)
+31459440 local AES operations
+825 milliseconds wall clock time
+{830000000;480000000;460000000} nanoseconds {real;user;system}
+Mem: 50224 KiB
+2560 messages sent
+136620 message bytes sent
+2501 Lamport clock (latencies)
+94378320 local AES operations
+2609 milliseconds wall clock time
+{2610000000;1460000000;1130000000} nanoseconds {real;user;system}
+Mem: 50232 KiB
+Precomputed values used: T0 a:1 r18:80 c:50
+===== P1 output
+Connection to p0 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+861 messages sent
+45728 message bytes sent
+840 Lamport clock (latencies)
+31459440 local AES operations
+825 milliseconds wall clock time
+{830000000;380000000;540000000} nanoseconds {real;user;system}
+Mem: 50064 KiB
+2560 messages sent
+136620 message bytes sent
+2501 Lamport clock (latencies)
+94378320 local AES operations
+2609 milliseconds wall clock time
+{2610000000;1360000000;1210000000} nanoseconds {real;user;system}
+Mem: 50136 KiB
+Precomputed values used: T0 a:1 r18:80 c:50
+===== P2 output
+Connection to p0 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+101888 message bytes sent
+840 Lamport clock (latencies)
+31584624 local AES operations
+823 milliseconds wall clock time
+{830000000;450000000;440000000} nanoseconds {real;user;system}
+Mem: 19788 KiB
+320 messages sent
+324880 message bytes sent
+2498 Lamport clock (latencies)
+84218208 local AES operations
+2608 milliseconds wall clock time
+{2600000000;1750000000;570000000} nanoseconds {real;user;system}
+Mem: 19796 KiB
+Precomputed values used: T0 r18:80
+===== End 1736248419 2025-01-07 16:43:39
+===== Running prac -p -- a:2 r20:240 c:100
+===== Start 1736248419 2025-01-07 16:43:39
+===== P0 output
+42 messages sent
+596640 message bytes sent
+42 Lamport clock (latencies)
+1509948000 local AES operations
+11926 milliseconds wall clock time
+{11930000000;12040000000;12420000000} nanoseconds {real;user;system}
+Mem: 18070500 KiB
+Precomputed values used: T0 a:2 r20:240 c:100
+===== P1 output
+42 messages sent
+596640 message bytes sent
+42 Lamport clock (latencies)
+1509948000 local AES operations
+11901 milliseconds wall clock time
+{11900000000;11600000000;12790000000} nanoseconds {real;user;system}
+Mem: 18025120 KiB
+Precomputed values used: T0 a:2 r20:240 c:100
+===== P2 output
+Connection to p0 refused, will retry.
+4 messages sent
+1290054 message bytes sent
+43 Lamport clock (latencies)
+22800 local AES operations
+11919 milliseconds wall clock time
+{11920000000;160000000;70000000} nanoseconds {real;user;system}
+Mem: 70000 KiB
+Precomputed values used: T0 r20:240
+===== End 1736248433 2025-01-07 16:43:53
+===== Running prac -o -- remise -m 20 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248433 2025-01-07 16:43:53
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+941 messages sent
+50568 message bytes sent
+920 Lamport clock (latencies)
+125831280 local AES operations
+1852 milliseconds wall clock time
+{1850000000;3030000000;1140000000} nanoseconds {real;user;system}
+Mem: 171572 KiB
+2800 messages sent
+151140 message bytes sent
+2741 Lamport clock (latencies)
+377493840 local AES operations
+5723 milliseconds wall clock time
+{5720000000;7970000000;3920000000} nanoseconds {real;user;system}
+Mem: 175056 KiB
+Precomputed values used: T0 a:1 r20:80 c:50
+===== P1 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+941 messages sent
+50568 message bytes sent
+920 Lamport clock (latencies)
+125831280 local AES operations
+1852 milliseconds wall clock time
+{1850000000;3480000000;760000000} nanoseconds {real;user;system}
+Mem: 175376 KiB
+2800 messages sent
+151140 message bytes sent
+2741 Lamport clock (latencies)
+377493840 local AES operations
+5723 milliseconds wall clock time
+{5720000000;8220000000;3970000000} nanoseconds {real;user;system}
+Mem: 175488 KiB
+Precomputed values used: T0 a:1 r20:80 c:50
+===== P2 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+111088 message bytes sent
+920 Lamport clock (latencies)
+125970288 local AES operations
+1845 milliseconds wall clock time
+{1850000000;2860000000;0} nanoseconds {real;user;system}
+Mem: 56840 KiB
+320 messages sent
+352480 message bytes sent
+2738 Lamport clock (latencies)
+335921248 local AES operations
+5721 milliseconds wall clock time
+{5720000000;7310000000;0} nanoseconds {real;user;system}
+Mem: 56920 KiB
+Precomputed values used: T0 r20:80
+===== End 1736248467 2025-01-07 16:44:27
+===== Running prac -p -- a:2 r22:240 c:100
+===== Start 1736248467 2025-01-07 16:44:27
+===== P0 output
+46 messages sent
+654720 message bytes sent
+46 Lamport clock (latencies)
+6039796320 local AES operations
+27777 milliseconds wall clock time
+{27780000000;90010000000;82970000000} nanoseconds {real;user;system}
+Mem: 71180892 KiB
+Precomputed values used: T0 a:2 r22:240 c:100
+===== P1 output
+46 messages sent
+654720 message bytes sent
+46 Lamport clock (latencies)
+6039796320 local AES operations
+27797 milliseconds wall clock time
+{27800000000;90950000000;80250000000} nanoseconds {real;user;system}
+Mem: 71217940 KiB
+Precomputed values used: T0 a:2 r22:240 c:100
+===== P2 output
+Connection to p1 refused, will retry.
+4 messages sent
+1400454 message bytes sent
+47 Lamport clock (latencies)
+22800 local AES operations
+27771 milliseconds wall clock time
+{27770000000;170000000;80000000} nanoseconds {real;user;system}
+Mem: 73908 KiB
+Precomputed values used: T0 r22:240
+===== End 1736248496 2025-01-07 16:44:56
+===== Running prac -o -- remise -m 22 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248496 2025-01-07 16:44:56
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+1021 messages sent
+55408 message bytes sent
+1000 Lamport clock (latencies)
+503318640 local AES operations
+4729 milliseconds wall clock time
+{4730000000;26280000000;4850000000} nanoseconds {real;user;system}
+Mem: 619880 KiB
+3040 messages sent
+165660 message bytes sent
+2981 Lamport clock (latencies)
+1509955920 local AES operations
+14421 milliseconds wall clock time
+{14420000000;69640000000;15620000000} nanoseconds {real;user;system}
+Mem: 619880 KiB
+Precomputed values used: T0 a:1 r22:80 c:50
+===== P1 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+1021 messages sent
+55408 message bytes sent
+1000 Lamport clock (latencies)
+503318640 local AES operations
+4730 milliseconds wall clock time
+{4730000000;28130000000;3840000000} nanoseconds {real;user;system}
+Mem: 619944 KiB
+3040 messages sent
+165660 message bytes sent
+2981 Lamport clock (latencies)
+1509955920 local AES operations
+14421 milliseconds wall clock time
+{14430000000;69200000000;15500000000} nanoseconds {real;user;system}
+Mem: 619944 KiB
+Precomputed values used: T0 a:1 r22:80 c:50
+===== P2 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+120288 message bytes sent
+1000 Lamport clock (latencies)
+503474544 local AES operations
+4718 milliseconds wall clock time
+{4720000000;10690000000;650000000} nanoseconds {real;user;system}
+Mem: 204160 KiB
+320 messages sent
+380080 message bytes sent
+2978 Lamport clock (latencies)
+1342602336 local AES operations
+14412 milliseconds wall clock time
+{14410000000;26660000000;670000000} nanoseconds {real;user;system}
+Mem: 204184 KiB
+Precomputed values used: T0 r22:80
+===== End 1736248622 2025-01-07 16:47:02
+===== Running prac -p -- a:2 r24:240 c:100
+===== Start 1736248623 2025-01-07 16:47:03
+===== P0 output
+===== P1 output
+terminate called after throwing an instance of 'boost::wrapexcept<boost::system::system_error>'
+  what():  read: End of file
+===== P2 output
+Connection to p0 refused, will retry.
+terminate called after throwing an instance of 'boost::wrapexcept<boost::system::system_error>'
+  what():  read: End of file
+===== End 1736248688 2025-01-07 16:48:08
+===== Running prac -o -- remise -m 24 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736248689 2025-01-07 16:48:09
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+1101 messages sent
+60248 message bytes sent
+1080 Lamport clock (latencies)
+2013268080 local AES operations
+16647 milliseconds wall clock time
+{16650000000;162730000000;41450000000} nanoseconds {real;user;system}
+Mem: 2383512 KiB
+3280 messages sent
+180180 message bytes sent
+3221 Lamport clock (latencies)
+6039804240 local AES operations
+48118 milliseconds wall clock time
+{48120000000;427210000000;120470000000} nanoseconds {real;user;system}
+Mem: 2383648 KiB
+Precomputed values used: T0 a:1 r24:80 c:50
+===== P1 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+1101 messages sent
+60248 message bytes sent
+1080 Lamport clock (latencies)
+2013268080 local AES operations
+16650 milliseconds wall clock time
+{16650000000;169820000000;34300000000} nanoseconds {real;user;system}
+Mem: 2384084 KiB
+3280 messages sent
+180180 message bytes sent
+3221 Lamport clock (latencies)
+6039804240 local AES operations
+48133 milliseconds wall clock time
+{48140000000;414530000000;103110000000} nanoseconds {real;user;system}
+Mem: 2384084 KiB
+Precomputed values used: T0 a:1 r24:80 c:50
+===== P2 output
+Remise code is being run
+
+===== Correct Post Stats Stats =====
+n_correct_posts = 10
+102 messages sent
+129488 message bytes sent
+1080 Lamport clock (latencies)
+2013432432 local AES operations
+16601 milliseconds wall clock time
+{16600000000;44950000000;0} nanoseconds {real;user;system}
+Mem: 793640 KiB
+320 messages sent
+407680 message bytes sent
+3218 Lamport clock (latencies)
+5369172320 local AES operations
+48097 milliseconds wall clock time
+{48100000000;112140000000;0} nanoseconds {real;user;system}
+Mem: 793676 KiB
+Precomputed values used: T0 r24:80
+===== End 1736249194 2025-01-07 16:56:34
+===== Running prac -p -- a:2 r26:240 c:100
+===== Start 1736249194 2025-01-07 16:56:34
+===== P0 output
+terminate called after throwing an instance of 'boost::wrapexcept<boost::system::system_error>'
+  what():  read: Connection reset by peer
+===== P1 output
+Connection to p0 refused, will retry.
+===== P2 output
+Connection to p0 refused, will retry.
+terminate called after throwing an instance of 'boost::wrapexcept<boost::system::system_error>'
+  what():  read: End of file
+===== End 1736249256 2025-01-07 16:57:36
+===== Running prac -o -- remise -m 26 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1736249256 2025-01-07 16:57:36

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker stop -t 0 ${PRAC_DOCKER_PREFIX}prac_p0 &
+docker stop -t 0 ${PRAC_DOCKER_PREFIX}prac_p1 &
+docker stop -t 0 ${PRAC_DOCKER_PREFIX}prac_p2 &
+wait

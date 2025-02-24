@@ -1,0 +1,245 @@
+===== Running prac -o -- remise -m 28 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1737739399 2025-01-24 22:53:19
+===== P0 output
+Remise code is being run
+
+===== Correct Post Stats =====
+n_correct_posts = 10
+1250 messages sent
+70460 message bytes sent
+1230 Lamport clock (latencies)
+32212256880 local AES operations
+232727 milliseconds wall clock time
+{232720000000;4600180000000;883520000000} nanoseconds {real;user;system}
+Mem: 37714660 KiB
+
+
+
+
+
+
+===== Failed Post Stats =====
+n_failed_posts = 10
+1250 messages sent
+70460 message bytes sent
+1230 Lamport clock (latencies)
+32212256880 local AES operations
+231093 milliseconds wall clock time
+{231100000000;4366660000000;1046430000000} nanoseconds {real;user;system}
+Mem: 37719140 KiB
+
+
+
+
+
+
+===== Cover Traffic Stats =====
+n_cover_traffic = 10
+1250 messages sent
+70460 message bytes sent
+1230 Lamport clock (latencies)
+32212256880 local AES operations
+232923 milliseconds wall clock time
+{232920000000;4394070000000;919880000000} nanoseconds {real;user;system}
+Mem: 37719140 KiB
+
+
+
+
+
+
+===== Providing Access Stats =====
+n_provide_access = 10
+620 messages sent
+34990 message bytes sent
+611 Lamport clock (latencies)
+16106128440 local AES operations
+112978 milliseconds wall clock time
+{112980000000;2080780000000;463590000000} nanoseconds {real;user;system}
+Mem: 37719140 KiB
+
+
+
+
+
+
+===== Reading Stats =====
+n_reads = 10
+620 messages sent
+34990 message bytes sent
+611 Lamport clock (latencies)
+16106128440 local AES operations
+111987 milliseconds wall clock time
+{111990000000;2072670000000;444200000000} nanoseconds {real;user;system}
+Mem: 37719140 KiB
+0 messages sent
+0 message bytes sent
+0 Lamport clock (latencies)
+0 local AES operations
+1203 milliseconds wall clock time
+{1200000000;0;1210000000} nanoseconds {real;user;system}
+Mem: 37719140 KiB
+Precomputed values used: T0 a:1 r28:80 c:50
+===== P1 output
+Connection to p0 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats =====
+n_correct_posts = 10
+1250 messages sent
+70460 message bytes sent
+1230 Lamport clock (latencies)
+32212256880 local AES operations
+232681 milliseconds wall clock time
+{232680000000;4483690000000;992100000000} nanoseconds {real;user;system}
+Mem: 37714312 KiB
+
+
+
+
+
+
+===== Failed Post Stats =====
+n_failed_posts = 10
+1250 messages sent
+70460 message bytes sent
+1230 Lamport clock (latencies)
+32212256880 local AES operations
+231124 milliseconds wall clock time
+{231120000000;4222890000000;1093770000000} nanoseconds {real;user;system}
+Mem: 37715464 KiB
+
+
+
+
+
+
+===== Cover Traffic Stats =====
+n_cover_traffic = 10
+1250 messages sent
+70460 message bytes sent
+1230 Lamport clock (latencies)
+32212256880 local AES operations
+232968 milliseconds wall clock time
+{232970000000;4221040000000;1298310000000} nanoseconds {real;user;system}
+Mem: 37716276 KiB
+
+
+
+
+
+
+===== Providing Access Stats =====
+n_provide_access = 10
+620 messages sent
+34990 message bytes sent
+611 Lamport clock (latencies)
+16106128440 local AES operations
+112949 milliseconds wall clock time
+{112950000000;1966550000000;649720000000} nanoseconds {real;user;system}
+Mem: 37716276 KiB
+
+
+
+
+
+
+===== Reading Stats =====
+n_reads = 10
+620 messages sent
+34990 message bytes sent
+611 Lamport clock (latencies)
+16106128440 local AES operations
+111987 milliseconds wall clock time
+{111990000000;2006480000000;485960000000} nanoseconds {real;user;system}
+Mem: 37716276 KiB
+0 messages sent
+0 message bytes sent
+0 Lamport clock (latencies)
+0 local AES operations
+1069 milliseconds wall clock time
+{1070000000;0;1070000000} nanoseconds {real;user;system}
+Mem: 37716276 KiB
+Precomputed values used: T0 a:1 r28:80 c:50
+===== P2 output
+Connection to p0 refused, will retry.
+Remise code is being run
+
+===== Correct Post Stats =====
+n_correct_posts = 10
+102 messages sent
+147888 message bytes sent
+1230 Lamport clock (latencies)
+32212456048 local AES operations
+231765 milliseconds wall clock time
+{231760000000;595770000000;0} nanoseconds {real;user;system}
+Mem: 12589056 KiB
+
+
+
+
+
+
+===== Failed Post Stats =====
+n_failed_posts = 10
+100 messages sent
+147840 message bytes sent
+1230 Lamport clock (latencies)
+32212456304 local AES operations
+231524 milliseconds wall clock time
+{231530000000;657720000000;0} nanoseconds {real;user;system}
+Mem: 12589056 KiB
+
+
+
+
+
+
+===== Cover Traffic Stats =====
+n_cover_traffic = 10
+100 messages sent
+147840 message bytes sent
+1230 Lamport clock (latencies)
+32212455024 local AES operations
+232967 milliseconds wall clock time
+{232970000000;616630000000;0} nanoseconds {real;user;system}
+Mem: 12589056 KiB
+
+
+
+
+
+
+===== Providing Access Stats =====
+n_provide_access = 10
+60 messages sent
+83600 message bytes sent
+608 Lamport clock (latencies)
+10737487808 local AES operations
+113006 milliseconds wall clock time
+{113000000000;207180000000;0} nanoseconds {real;user;system}
+Mem: 12589056 KiB
+
+
+
+
+
+
+===== Reading Stats =====
+n_reads = 10
+60 messages sent
+83600 message bytes sent
+608 Lamport clock (latencies)
+10737486784 local AES operations
+111953 milliseconds wall clock time
+{111960000000;198520000000;0} nanoseconds {real;user;system}
+Mem: 12589056 KiB
+0 messages sent
+0 message bytes sent
+0 Lamport clock (latencies)
+0 local AES operations
+542 milliseconds wall clock time
+{540000000;550000000;0} nanoseconds {real;user;system}
+Mem: 12589056 KiB
+Precomputed values used: T0 r28:80
+===== End 1737747466 2025-01-25 01:07:46

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for ctnr in ${PRAC_DOCKER_PREFIX}prac_p0 ${PRAC_DOCKER_PREFIX}prac_p1 ${PRAC_DOCKER_PREFIX}prac_p2; do
+    docker exec --privileged $ctnr bash -c "if tc qdisc list dev eth0 | grep -q netem; then tc qdisc del dev eth0 root; fi"
+done

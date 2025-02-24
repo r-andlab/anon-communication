@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Get the IP addresses
+p0addr=$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' ${PRAC_DOCKER_PREFIX}prac_p0)
+p1addr=$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' ${PRAC_DOCKER_PREFIX}prac_p1)
+
+# Gather options and arguments
+preproc=0
+opts=""
+while getopts paoC:t:ex arg; do
+    opts+=" -${arg} ${OPTARG}"
+    if [ "$arg" = "p" -o "$arg" = "a" ]; then
+        preproc=1
+    fi
+done
+shift $((OPTIND-1))
+
+# Get the number of cores usable by each party
+ncores_p0=1
+ncores_p1=1
+ncores_p2=1
+if [ "$whichexps" != "none" ]; then
+    ncores_p0=`docker exec -i ${PRAC_DOCKER_PREFIX}prac_p0 $PRAC_NUMA_P0 nproc 2>/dev/null`
+    ncores_p1=`docker exec -i ${PRAC_DOCKER_PREFIX}prac_p1 $PRAC_NUMA_P1 nproc 2>/dev/null`
+    ncores_p2=`docker exec -i ${PRAC_DOCKER_PREFIX}prac_p2 $PRAC_NUMA_P2 nproc 2>/dev/null`
+fi
+
+targ_p0="-t ${ncores_p0}"
+targ_p1="-t ${ncores_p1}"
+targ_p2="-t ${ncores_p2}"
+
+echo ===== Running prac $opts -- $*
+date "+===== Start %s %F %T"
+
+# Run, saving the output
+savefile0=$$.p0.out
+savefile1=$$.p1.out
+savefile2=$$.p2.out
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p0 bash -c "$PRAC_NUMA_P0 stdbuf -o 0 ./prac $opts $targ_p0 0 $* > $savefile0 2>&1" &
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p1 bash -c "$PRAC_NUMA_P1 stdbuf -o 0 ./prac $opts $targ_p1 1 $p0addr $* > $savefile1 2>&1" &
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p2 bash -c "$PRAC_NUMA_P2 stdbuf -o 0 ./prac $opts $targ_p2 2 $p0addr $p1addr $* > $savefile2 2>&1" &
+wait
+echo ===== P0 output
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p0 cat $savefile0
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p0 rm -f $savefile0
+echo ===== P1 output
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p1 cat $savefile1
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p1 rm -f $savefile1
+echo ===== P2 output
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p2 cat $savefile2
+docker exec -w /root/prac ${PRAC_DOCKER_PREFIX}prac_p2 rm -f $savefile2
+date "+===== End %s %F %T"

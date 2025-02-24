@@ -1,0 +1,13 @@
+===== Running prac -o -- remise -m 30 -d 10 -i 5 -e 1 -opt 0 -s 0
+===== Start 1737781082 2025-01-25 10:28:02
+===== P0 output
+Remise code is being run
+terminate called after throwing an instance of 'boost::wrapexcept<boost::system::system_error>'
+  what():  read: Connection reset by peer
+===== P1 output
+Remise code is being run
+===== P2 output
+Remise code is being run
+terminate called after throwing an instance of 'boost::wrapexcept<boost::system::system_error>'
+  what():  read: End of file
+===== End 1737816089 2025-01-25 20:11:29
