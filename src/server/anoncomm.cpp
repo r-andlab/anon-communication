@@ -200,6 +200,8 @@ void AnnonComm(MPCIO &mpcio, const PRACOptions &opts, char **args) {
       n_cover_traffic = std::atoi(args[i + 1]);
     } else if (option == "-g" && i + 1 < nargs) {
       n_provide_access = std::atoi(args[i + 1]);
+
+
     } else if (option == "-r" && i + 1 < nargs) {
       n_reads = std::atoi(args[i + 1]);
     }
@@ -303,5 +305,62 @@ void AnnonComm(MPCIO &mpcio, const PRACOptions &opts, char **args) {
     mpcio.dump_stats(std::cout);
     mpcio.reset_stats();
     tio.reset_lamport();
+  });
+}
+
+#include <rpc/server.h>
+#include <thread>
+#include <chrono>
+
+void TestMode(MPCIO &mpcio, const PRACOptions &opts, char **args) {
+  MPCTIO tio(mpcio, 0, opts.num_cpu_threads);
+
+  int dbsize = 10;
+
+  run_coroutines(tio, [&tio, dbsize, &mpcio](yield_t &yield) {
+    size_t size = size_t(1) << dbsize;
+
+    SAM bulletinboard(tio.player(), size);
+
+    Writer writer(1001);
+
+    bulletinboard.initialize_proofDB(tio, yield, size, writer);
+
+    mpcio.reset_stats();
+    tio.reset_lamport();
+
+    rpc::server srv(8080);
+
+    srv.bind("post", [&](value_t index, value_t val, value_t proof) {
+               RegAS ind, inserted_val, proof_submitted;
+               ind.ashare = index;
+               inserted_val.ashare = val;
+               proof_submitted.ashare = proof;
+               
+               bulletinboard.post_message(tio, yield, ind, inserted_val, proof_submitted);
+
+               return 0;
+             });
+    srv.bind("get_access_list", [&]() {
+                 std::vector<uint64_t> vec(writer.access_list, writer.access_list + 1001);
+                 return vec;
+               });
+    srv.bind("get_proofdb", [&]() {
+                 std::vector<uint64_t> vec(writer.proofs, writer.proofs + 1001);
+                 return vec;
+               });
+
+    srv.async_run(1);
+
+    while (true) {
+      tio.sync_lamport();
+
+      // #ifdef VERBOSE
+          mpcio.dump_stats(std::cout);
+          bulletinboard.publish_bulletin_board(tio, yield, size);
+      // #endif
+
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
   });
 }

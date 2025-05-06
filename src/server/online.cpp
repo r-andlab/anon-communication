@@ -13,6 +13,9 @@ void online_main(MPCIO &mpcio, const PRACOptions &opts, char **args) {
   } else if (!strcmp(*args, "annoncomm")) {
     ++args;
     AnnonComm(mpcio, opts, args);
+  } else if (!strcmp(*args, "test")) {
+    ++args;
+    TestMode(mpcio, opts, args);
   } else {
     std::cerr << "Unknown mode " << *args << "\n";
   }

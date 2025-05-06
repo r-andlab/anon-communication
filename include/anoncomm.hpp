@@ -75,4 +75,6 @@ public:
 
 void AnnonComm(MPCIO &mpcio, const PRACOptions &opts, char **args);
 
+void TestMode(MPCIO &mpcio, const PRACOptions &opts, char **args);
+
 #endif

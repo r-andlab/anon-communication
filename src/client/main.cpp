@@ -5,9 +5,11 @@
 #include <cell.hpp>
 #include <duoram.hpp>
 
-bool post_message(const char *ip, RegAS ind, RegAS val, RegAS proof) {
+bool post_message(const char *ip, RegAS index, RegAS val, RegAS proof) {
   try {
-    auto result = client.call("post", ind, val, proof).as<int>();
+    rpc::client client(ip, 8080);
+    
+    auto result = client.call("post", index.ashare, val.ashare, proof.ashare).as<int>();
 
     if (result != 0) {
       std::cout << "Protocol Error: " << result << std::endl;
@@ -24,6 +26,22 @@ bool post_message(const char *ip, RegAS ind, RegAS val, RegAS proof) {
   return true;
 }
 
+struct TokenDB {
+  std::vector<uint64_t> access_list;
+  std::vector<uint64_t> proofs;
+};
+
+TokenDB get_tokenDB(const char *ip) {
+  TokenDB db;
+
+  rpc::client client(ip, 8080);
+  
+  db.access_list = client.call("get_access_list").as<std::vector<uint64_t>>();
+  db.proofs = client.call("get_proofdb").as<std::vector<uint64_t>>();
+
+  return db;
+}
+
 int main(int argc, char *argv[]) {
   if (argc < 3) {
     std::cout << "Usage: anoncomm_client <server1_ip> <server2_ip>" << std::endl;
@@ -33,13 +51,22 @@ int main(int argc, char *argv[]) {
   const char *server1_ip = argv[1];
   const char *server2_ip = argv[2];
 
-  Writer writer(1001);
+  TokenDB tdb = get_tokenDB(server1_ip);
 
-  RegAS ind, val, proof;
-  inserted_val.randomize(8);
+  RegAS msg, proof;
 
-  if (!post_message(server1_ip, ind, val, proof)) return -1;
-  if (!post_message(server2_ip, ind, val, proof)) return -1;
+  msg.randomize(8);
+  proof.ashare = tdb.proofs[0];
+
+  RegAS idx1;
+  idx1.ashare = 0;
+
+  if (!post_message(server1_ip, idx1, msg, proof)) return -1;
+
+  RegAS idx2;
+  idx2.ashare = 1;
+  
+  if (!post_message(server2_ip, idx2, msg, proof)) return -1;
   
   return 0;
 }
