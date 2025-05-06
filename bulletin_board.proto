@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package bulletin;
+
+service DatabaseService {
+  rpc SubmitShare (ShareRequest) returns (ShareResponse);
+  rpc CommitShare (CommitRequest) returns (CommitResponse);
+}
+
+service AuditService {
+  rpc VerifyShare (VerifyRequest) returns (VerifyResponse);
+}
+
+message ShareRequest {
+  int32 index = 1;
+  bytes share = 2;
+}
+
+message ShareResponse {
+  string status = 1;
+}
+
+message CommitRequest {
+  int32 index = 1;
+}
+
+message CommitResponse {
+  string status = 1;
+}
+
+message VerifyRequest {
+  int32 index = 1;
+  bytes share = 2;
+  string server_id = 3;
+}
+
+message VerifyResponse {
+  string status = 1;
+}
